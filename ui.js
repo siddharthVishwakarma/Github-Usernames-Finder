@@ -1,10 +1,10 @@
 class UI {
-    constructor(){
-        this.profile = document.getElementById('profile');
-    }
+  constructor() {
+    this.profile = document.getElementById("profile");
+  }
 
-    showProfile(user){
-        this.profile.innerHTML = `
+  showProfile(user) {
+    this.profile.innerHTML = `
             <div class="card card-body mb3">
                 <div class="row">
                     <div class="col-md-3">
@@ -29,5 +29,9 @@ class UI {
             <h3 class="page-heading mb-3">Latest Repos</h3>
             <div id="repos"></div>
         `;
-    }
+  }
+
+  clearProfile() {
+    this.profile.innerHTML = "";
+  }
 }
