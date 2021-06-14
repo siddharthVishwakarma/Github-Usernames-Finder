@@ -31,6 +31,31 @@ class UI {
         `;
   }
 
+  // Show repos
+  showRepos(repos) {
+    let output = "";
+
+    repos.forEach((repo) => {
+      output += `
+        <div class="card card-body mb-2">
+        <div class="row">
+          <div class="col-md-6">
+            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+          </div>
+          <div class="col-md-6">
+            <span class="badge badge-warning">Stars: ${repo.stargazers_count}</span>
+            <span class="badge badge-danger">Watchers: ${repo.watchers}</span>
+            <span class="badge badge-secondary">Forks: ${repo.forms_count}</span> 
+          </div>
+        </div>
+        </div>
+      `;
+    });
+
+    // Output Repos
+    document.getElementById("repos").innerHTML = output;
+  }
+
   // Show alert msg
   showAlert(message, className) {
     const div = document.createElement("div");
